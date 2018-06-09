@@ -14,7 +14,7 @@ public class PixelSort {
 	
 	public static void main(String args[])	{
 		try	{
-			img = ImageIO.read(new File("image.png"));
+			img = ImageIO.read(new File("image1.png"));
 		} catch(Exception e)	{
 			e.printStackTrace();
 		}
@@ -31,7 +31,7 @@ public class PixelSort {
 				int p = img.getRGB(i, j);
 				p &= ~0b11111111000000000000000000000000; // Removes the alpha channel
 				//p |= 0b00000000000000010000000100000001; // Sets minimum value to 1 for each color
-				pix[(i * width) + j] = p;
+				pix[(i * height) + j] = p;
 			}
 		}
 		
@@ -42,12 +42,12 @@ public class PixelSort {
 		
 		System.out.println("Done sorting!\nIndexing back...");
 		
-		BufferedImage pixelSorted = new BufferedImage(height, width, BufferedImage.TYPE_INT_RGB);
+		BufferedImage pixelSorted = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
 		
 		// Loads sorted pixels into a new image
 		for(int i = 0; i < width; i++)	{
 			for(int j = 0; j < height; j++)	{
-				pixelSorted.setRGB(j, i, pix[(i * width) + j]);
+				pixelSorted.setRGB(i, j, pix[(i * height) + j]);
 			}
 		}
 		
