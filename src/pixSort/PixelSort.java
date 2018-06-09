@@ -30,7 +30,7 @@ public class PixelSort {
 			for(int j = 0; j < height; j++)	{
 				int p = img.getRGB(i, j);
 				p &= ~0b11111111000000000000000000000000; // Removes the alpha channel
-				//p |= 0b00000000000000010000000100000001;
+				//p |= 0b00000000000000010000000100000001; // Sets minimum value to 1 for each color
 				pix[(i * width) + j] = p;
 			}
 		}
