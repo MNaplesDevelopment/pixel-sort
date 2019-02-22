@@ -6,4 +6,4 @@ This is a very simple idea I discovered when watching obscure YouTube videos abo
 ![original](image.png)
 
 ## Pixel Sorted
-![sorted](img.png)
+![sorted](pic.png)
